@@ -6,18 +6,18 @@
       <a class="center-flex" mat-list-item routerLink="" >
         <div class="d-inline-flex">
             <mat-icon>home</mat-icon>
-            <span matLine>Home</span>
+            <span class="aligned-with-icon" matLine>Home</span>
         </div>
       </a>
       <a class="center-flex" mat-list-item routerLink="/craftnectar" >
         <div class="d-inline-flex">
             <mat-icon>dns</mat-icon>
-            <span matLine>CraftNectar</span>
+            <span class="aligned-with-icon" matLine>CraftNectar</span>
         </div>
       </a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content class="router-window">
     <mat-toolbar color="primary">
       @if (isHandset$ | async) {
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
