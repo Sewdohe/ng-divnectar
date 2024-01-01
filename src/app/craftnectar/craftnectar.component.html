@@ -4,7 +4,8 @@
     </mat-card-header>
     <mat-card-content>
         <ul>
-            <li *ngFor="let player of players">{{player}}</li>
+            <li class="flex justify-start align-start" *ngFor="let player of playerData"><img class="p-2"
+                    [src]="player.avatar" /><span class="text-xl my-auto">{{player.name}}</span></li>
         </ul>
     </mat-card-content>
 </mat-card>
