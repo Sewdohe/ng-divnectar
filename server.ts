@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
@@ -23,6 +26,14 @@ export function app(): express.Express {
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'
   }));
+
+  server.use(
+    '/api',
+    createProxyMiddleware({
+       target: 'http://craft.divnectar.com:4444/api/placeholder',
+       changeOrigin: true
+    })
+  );
 
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
