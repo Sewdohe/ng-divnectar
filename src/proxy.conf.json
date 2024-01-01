@@ -1,6 +1,6 @@
 {
     "/api": {
-       "target": "http://craft.divnectar.com:4444/api/placeholder",
+       "target": "https://divnectar.com/api/",
        "secure": false,
        "pathRewrite": {
         "^/api": ""

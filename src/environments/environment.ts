@@ -1,3 +1,4 @@
 export const environment = {
-    baseUrl: ""
+    production: true,
+    baseUrl: "https://divnectar.com/api/"
 };
