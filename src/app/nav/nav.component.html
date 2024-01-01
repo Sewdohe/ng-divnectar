@@ -1,17 +1,17 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>Navigation</mat-toolbar>
     <mat-nav-list>
       <a class="center-flex" mat-list-item routerLink="" >
         <div class="d-inline-flex">
-            <mat-icon>home</mat-icon>
+            <mat-icon color="accent">home</mat-icon>
             <span class="aligned-with-icon" matLine>Home</span>
         </div>
       </a>
       <a class="center-flex" mat-list-item routerLink="/craftnectar" >
         <div class="d-inline-flex">
-            <mat-icon>dns</mat-icon>
+            <mat-icon color="accent">dns</mat-icon>
             <span class="aligned-with-icon" matLine>CraftNectar</span>
         </div>
       </a>
