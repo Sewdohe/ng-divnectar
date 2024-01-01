@@ -21,11 +21,14 @@
     <mat-toolbar color="primary">
       @if (isHandset$ | async) {
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon class="text-orange-950" aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       }
-      <span class="text-3xl font-bold">Div Nectar</span>
+      <span class="text-3xl text-orange-950 font-bold">Div Nectar</span>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

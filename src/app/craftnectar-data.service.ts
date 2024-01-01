@@ -8,7 +8,7 @@ import { PlayerlistResponse } from '../types';
   providedIn: 'root',
 })
 export class CraftnectarDataService {
-  private apiUrl = 'http://craft.divnectar.com:4444/api/placeholder';
+  private apiUrl = '/api';
   // @ts-ignore
   playerList$: Observable<PlayerlistResponse>;
 
@@ -18,7 +18,8 @@ export class CraftnectarDataService {
       headers: {
         Authorization: "Bearer testingthis",
         Accept: "Application/JSON"
-      }
+      },
+      
     })
   }
 }

@@ -1,0 +1,11 @@
+{
+    "/api": {
+       "target": "http://craft.divnectar.com:4444/api/placeholder",
+       "secure": false,
+       "pathRewrite": {
+        "^/api": ""
+      },
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+ }
