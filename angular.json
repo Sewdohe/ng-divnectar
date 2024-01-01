@@ -71,10 +71,12 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "divnectar:build:production"
+              "buildTarget": "divnectar:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "buildTarget": "divnectar:build:development"
+              "buildTarget": "divnectar:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
