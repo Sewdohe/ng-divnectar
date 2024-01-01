@@ -27,13 +27,13 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
-  server.use(
-    '/api',
-    createProxyMiddleware({
-       target: 'http://craft.divnectar.com:4444/api/placeholder',
-       changeOrigin: true
-    })
-  );
+  // server.use(
+  //   '/api',
+  //   createProxyMiddleware({
+  //      target: 'http://craft.divnectar.com:4444/api/placeholder',
+  //      changeOrigin: true
+  //   })
+  // );
 
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
