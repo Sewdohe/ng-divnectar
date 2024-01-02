@@ -51,15 +51,15 @@ export class NavComponent {
       route: '/craftnectar',
       children: [
         {
-          name: 'Players',
-          icon: 'profile',
-          route: '/playerlist'
+          name: 'Player List',
+          icon: 'person',
+          route: '/players'
         },
-        {
-          name: 'Leaderboard',
-          icon: 'stats',
-          route: '/leaderboard'
-        }
+        // {
+        //   name: 'Leaderboard',
+        //   icon: 'leaderboard',
+        //   route: '/leaderboard'
+        // }
       ]
     }
   ]

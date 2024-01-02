@@ -3,7 +3,7 @@ export interface PlayerlistResponse {
     placeholder: string
 }
 
-export interface PlayerListData {
+export interface PlayerData {
     name: string,
-    avatar: string
+    avatarUrl: string
 }
