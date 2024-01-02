@@ -16,7 +16,7 @@
     <table mat-table [dataSource]="serverData.data$" class="mat-elevation-z8">
         <ng-container matColumnDef="avatar">
             <th mat-header-cell *matHeaderCellDef> Avatar </th>
-            <td mat-cell *matCellDef="let player"> <img class="p-4" [src]="player.avatarUrl" /> </td>
+            <td mat-cell *matCellDef="let player"> <img class="p-4 grow" [src]="player.avatarUrl" /> </td>
           </ng-container>
         
           <ng-container matColumnDef="name">

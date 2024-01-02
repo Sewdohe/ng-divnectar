@@ -1,11 +1,14 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable, ReplaySubject, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject, concatMap, map, switchMap, tap } from 'rxjs';
 import { PlayerData, PlayerlistResponse } from '../types';
 import { environment } from './../environments/environment';
 import { WindowService } from './window.service';
 
+enum PLACEHOLDERS {
+  LEVEL = '%parseother_{sewdohe}_{alonsolevels_level}%',
+}
 
 @Injectable({
   providedIn: 'root',
@@ -30,36 +33,19 @@ export class CraftnectarDataService {
           Accept: "Application/JSON"
         },
       }).pipe(
+        // this recieves the response data from the post req:
+        // { status: bool, placeholder: string}
         map(listRes => {
-          return listRes.placeholder.split(', ')
+          return listRes.placeholder.split(', ') // then split the string by commas to get an array of players
         }),
-        map((players: string[]) => {
-         return players.map(player => {
+        map((players: string[]) => { // map this array of strings into an array of objects with player name and avatar URL property
+          return players.map(player => {
             return {
               name: player,
               avatarUrl: `https://mc-heads.net/avatar/${player}/32.png`
             }
-         })
+          })
         })
       )
-
   }
-
-  // getAvatarData(players: string[]) {
-  //   players.forEach(p => {
-  //     if (isPlatformBrowser(this.platformId)) { // only perform this iteration when on the client/browser. No window object to build URL from otherwise.
-  //       this.http.get(`https://mc-heads.net/avatar/${p}/32`, { responseType: 'arraybuffer' }).pipe(
-  //         tap(res => {
-  //           var arrayBufferView = new Uint8Array(res);
-  //           var blob = new Blob([arrayBufferView], { type: "image/png" });
-  //           var urlCreator = this.win.nativeWindow.URL || this.win.nativeWindow.webkitURL;
-  //           var imageUrl = urlCreator.createObjectURL(blob);
-  //           console.log(`Got avatar for player ${p}: ${imageUrl}`)
-  //           this.playerData.push({ name: p, avatarUrl: imageUrl })
-  //         })
-  //       )
-  //     }
-  //   })
-  //   this.playerData$.next(this.playerData)
-  // }
 }
