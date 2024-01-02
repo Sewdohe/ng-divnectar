@@ -3,18 +3,14 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Navigation</mat-toolbar>
     <mat-nav-list>
-      <a class="center-flex"  mat-list-item routerLink="" >
-        <div class="d-inline-flex">
-            <mat-icon>home</mat-icon>
-            <span class="aligned-with-icon" matLine>Home</span>
-        </div>
-      </a>
-      <a class="center-flex" mat-list-item routerLink="/craftnectar" >
-        <div class="d-inline-flex">
-            <mat-icon >dns</mat-icon>
-            <span class="aligned-with-icon" matLine>CraftNectar</span>
-        </div>
-      </a>
+      <div *ngFor="let item of navigationItems;">
+        <a class="center-flex" mat-list-item [routerLink]="item.route">
+          <div class="d-inline-flex">
+            <mat-icon>{{item.icon}}</mat-icon>
+            <span class="aligned-with-icon" matLine>{{item.name}}</span>
+          </div>
+        </a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="router-window">
