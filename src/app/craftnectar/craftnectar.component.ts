@@ -3,7 +3,7 @@ import { CraftnectarDataService } from '../craftnectar-data.service';
 import { Observable } from 'rxjs';
 import { PlayerlistResponse, PlayerListData } from '../../types';
 import { CommonModule } from '@angular/common';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 
 @Component({

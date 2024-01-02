@@ -23,10 +23,13 @@ $theme: mat.define-dark-theme((
 $palette-color : map-get($theme, color);
 // Get background param from color param
 $background: map-get($palette-color, background);
+$card: map-get($palette-color, card);
 // $background also has background param contains color, set it to red (for example)
 $background: map_merge($background, (background: #22092C));
+$card: map_merge($background, (card: #22092C));
 // Set background param for palette
 $palette-color: map_merge($palette-color, (background: $background));
+$palette-color: map_merge($palette-color, (card: $card));
 // Set palette for theme
 $theme: map_merge($theme, (color: $palette-color));
 
