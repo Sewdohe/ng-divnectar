@@ -55,6 +55,11 @@ export class NavComponent {
           icon: 'person',
           route: '/players'
         },
+        {
+          name: 'Dynmap',
+          icon: 'map',
+          route: '/map'
+        },
         // {
         //   name: 'Leaderboard',
         //   icon: 'leaderboard',

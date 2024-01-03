@@ -1,4 +1,4 @@
-<section class="py-8 px-4 mx-auto justify-center">
+<section class="py-8 px-4 max-w-full lg:max-w-lg mx-auto justify-center">
     <h2 class="text-2xl font-extrabold">Online Players:</h2>
     <table  *ngIf="serverData.onlineData$ | async; else elseblock" mat-table [dataSource]="serverData.onlineData$" class="mat-elevation-z8">
         <ng-container matColumnDef="avatar">
@@ -15,11 +15,11 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <ng-template #elseblock>
-        <p class="text-3xl pl-8">No Players Online</p>
+        <p class="text-3xl pl-8">No Players Online 😥</p>
     </ng-template>
 </section>
 
-<section class="py-8 px-4 mx-auto justify-center">
+<section class="py-8 px-4 max-w-full lg:max-w-lg mx-auto justify-center">
     <h2 class="text-2xl font-extrabold">Offline Players:</h2>
     <table mat-table [dataSource]="serverData.offlineData$" class="mat-elevation-z8">
         <ng-container matColumnDef="avatar">
