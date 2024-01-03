@@ -2,7 +2,7 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Navigation</mat-toolbar>
-    <mat-nav-list role="navigation">
+    <mat-nav-list class="max-w-full overflow-hidden" role="navigation">
       @for (item of navigationItems; track item) {
           <a [href]="item.route" mat-list-item matListItemTitle><mat-icon>{{item.icon}}</mat-icon> {{item.name}}</a>
         @for (sub of item.children; track sub) {
