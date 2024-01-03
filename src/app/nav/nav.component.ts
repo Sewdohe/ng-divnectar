@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import {MatTreeModule} from '@angular/material/tree';
+import { FooterComponent } from '../footer/footer.component';
 
 
 interface MenuNode {
@@ -34,7 +35,7 @@ interface MenuNode {
     RouterOutlet,
     RouterLink,
     CommonModule,
-    MatTreeModule
+    FooterComponent
   ]
 })
 export class NavComponent {
