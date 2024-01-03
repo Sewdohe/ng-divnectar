@@ -17,3 +17,15 @@ a {
     color: #ff448c;
     font-weight: bolder;
 }
+
+::-webkit-scrollbar {
+    width: 2px;
+    background: transparent;
+    border-radius: 2px;;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+    background: #FF0000;
+    width: 4px;
+    border-radius: 2px;
+ }
